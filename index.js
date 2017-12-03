@@ -5,6 +5,9 @@ const summary = require('node-summary');
 const path    = require("path");
 const youtubedl = require('youtube-dl');
 const exphbs  = require('express-handlebars');
+const config = require(__dirname+'/config');
+
+console.log(config);
 
 app.engine('handlebars', exphbs({defaultLayout:'main'}));
 app.set('view engine', 'handlebars');
@@ -29,7 +32,7 @@ app.post('/getSummary', (req,res)=>{
 	const download = youtube.pipe(fs.createWriteStream('./video/ytVideo.mp4'));
 
 	download.on('finish',()=>{
-		const video = new ffmpeg('./video/ytVideo.mp4');
+	const video = new ffmpeg('./video/ytVideo.mp4');
 	video.then((vid)=>{
 		const metadata = vid.metadata;
 		vid.fnExtractSoundToMP3('./audio/audio.mp3', ()=>{
@@ -78,11 +81,11 @@ app.post('/getSummary', (req,res)=>{
 						}, dict);
 					});
 				});
-					});
-				});
+			});
 				});
 			});
 		});
+	});
 
 app.listen(3000,()=>{
 	console.log("Listening on port 3000");
