@@ -1,0 +1,29 @@
+{
+  "name": "UHack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bingspeech-api-client": "^2.3.1",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "ffmpeg": "0.0.4",
+    "handlebars": "^4.0.11",
+    "hbs": "^4.0.1",
+    "lexrank": "^1.0.4",
+    "lexrank.js": "^1.3.0",
+    "node-summary": "^1.2.0",
+    "nodejs-text-summarizer": "^2.0.3",
+    "simple-summary": "^0.1.1",
+    "textrank": "^1.0.5",
+    "watson-developer-cloud": "^2.42.0",
+    "watson-speech": "^0.34.1",
+    "youtube-dl": "^1.12.2"
+  }
+}

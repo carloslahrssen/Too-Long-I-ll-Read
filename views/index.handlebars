@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+
+		<h1>VideoSummary</h1>
+		<p id="wait">{{success}}</p>
+		<form>
+			<div class="input-group">
+			<input id="url" class="form-control" type="text" name="url">
+			<span class="input-group-btn">
+				<button type="submit" id="submit" class="btn btn-info">SUBMIT</button>
+			</span>
+			</div>
+		</form>
+		<blockquote class="blockquote">
+			<p class="mb-0" id="text"></p>
+		</blockquote>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#wait').hide();
+		    $('form').on('submit', (event) => {
+		    	event.preventDefault();
+		    	$('#wait').show();
+		    	const url = $('#url').val(); //$(this).serialize();
+		    	console.log(url);
+		    	$.post('/getSummary', {url})
+		    		.then((result) => {
+		    			$('#text').html(result);
+    				});
+			});
+	    });
+	</script>
+</body>
+</html>
