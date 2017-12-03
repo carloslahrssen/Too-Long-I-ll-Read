@@ -1,13 +1,28 @@
+body{
+	background-color: #2ecc71;
+}
 .container{
 	margin-top: 100px;
 }
 h1{
 	text-align: center;
 	font-size: 48px;
+	color: #ecf0f1;
+	margin-bottom: 50px;
+}
+h4{
+	text-align: center;
+	font-size: 36px;
+	margin-bottom: 50px;
+}
+.form-control{
+	height:50px;
+	font-size: 18px;
 }
 .url{
 	text-align: center;
 	align-content: center;	
+	width: 100%;
 }
 .blockquote{
 	margin-top: 50px;
@@ -17,4 +32,11 @@ h1{
 p{
 	font-size: 24px;
 	line-height: 200%;
+	color:#ecf0f1;
+}
+.btn-info{
+	background-color: #2980b9;
+	color:#ecf0f1;
+	border-color: #2980b9;
+	height: 50px;
 }
